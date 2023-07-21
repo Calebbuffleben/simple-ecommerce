@@ -1,6 +1,7 @@
 'use client'
 import { ChangeEvent, ChangeEventHandler, FormEvent, FormEventHandler, SyntheticEvent } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form'
+import FormComponent from '../components/FormComponent/FormComponent';
 import api from '../services/api'
 
 interface IProductValues {
@@ -22,13 +23,7 @@ export default function Register() {
   }
   return (
     <>
-    
-      <form onSubmit={handleSubmit(handleCreateProduct)}>
-        <input {...register('title')} type="text" placeholder="Título" />
-        <input {...register('description')} type="text" placeholder="Descrição" />
-        <input type="image" />
-        <button type="submit" >Salvar Produto</button>
-      </form>
+      <FormComponent handleCreateProduct={handleCreateProduct} handleSubmit={handleSubmit} register={register} />
     </>
   )
 }

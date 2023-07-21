@@ -1,4 +1,4 @@
-const FormComponent = ({ register, handleSubmit, handleCreateProduct }) => {
+const FormComponent = ({ register, handleSubmit, handleCreateProduct }: any) => {
 
   return(
     <form onSubmit={handleSubmit(handleCreateProduct)}>
