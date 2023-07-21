@@ -22,6 +22,7 @@ export default function Register() {
   }
   return (
     <>
+    
       <form onSubmit={handleSubmit(handleCreateProduct)}>
         <input {...register('title')} type="text" placeholder="Título" />
         <input {...register('description')} type="text" placeholder="Descrição" />
