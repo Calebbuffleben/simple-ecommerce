@@ -1,8 +1,12 @@
-const EditProduct = () => {
+import FormComponent from "@/app/components/FormComponent/FormComponent"
+
+const UpdateProduct = () => {
 
     return (
-        <h1>This works</h1>
+        <>
+            <FormComponent />
+        </>
     )
 }
 
-export default EditProduct;
+export default UpdateProduct;
