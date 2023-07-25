@@ -1,10 +1,45 @@
-import FormComponent from "@/app/components/FormComponent/FormComponent"
+"use client"
 
-const UpdateProduct = () => {
+import FormComponent from "@/app/components/FormComponent/FormComponent"
+import api from "@/app/services/api"
+import { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
+
+interface IProductValues {
+    title: string;
+    description: string;
+}
+
+const UpdateProduct = ({ params }: { params: { slug: string }}) => {
+    const [defaultValues, setDefaultValues] = useState();
+
+    useEffect(() => {
+        getDefaultValue();
+        console.log(params)
+    }, [])
+
+    const getDefaultValue = async (): Promise<void> => {
+        const response = await api.get(`api/form/${params}`)
+
+        setDefaultValues(response.data);
+    }
+
+    const { handleSubmit, register } = useForm<IProductValues>({
+        defaultValues: defaultValues,
+        mode: 'onChange'
+      })
+    
+    const handleUpdateProduct = async (data: IProductValues): Promise<void> => {
+        console.log(data)
+
+        const { title, description } = data;
+
+        await api.put('api/form',{ title, description })
+    }
 
     return (
         <>
-            <FormComponent />
+            <FormComponent handleProduct={handleUpdateProduct} handleSubmit={handleSubmit} register={register} />
         </>
     )
 }

@@ -1,5 +1,4 @@
-'use client'
-import { ChangeEvent, ChangeEventHandler, FormEvent, FormEventHandler, SyntheticEvent } from 'react';
+"use client"
 import { SubmitHandler, useForm } from 'react-hook-form'
 import FormComponent from '../components/FormComponent/FormComponent';
 import api from '../services/api'
@@ -23,7 +22,7 @@ export default function Register() {
   }
   return (
     <>
-      <FormComponent handleCreateProduct={handleCreateProduct} handleSubmit={handleSubmit} register={register} />
+      <FormComponent handleProduct={handleCreateProduct} handleSubmit={handleSubmit} register={register} />
     </>
   )
 }

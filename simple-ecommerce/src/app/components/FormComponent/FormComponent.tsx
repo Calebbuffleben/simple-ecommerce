@@ -1,7 +1,7 @@
-const FormComponent = ({ register, handleSubmit, handleCreateProduct }: any) => {
-
+"use client"
+const FormComponent = ({ register, handleSubmit, handleProduct, handleUpdateProduct }: any) => {
   return(
-    <form onSubmit={handleSubmit(handleCreateProduct)}>
+    <form onSubmit={handleSubmit(handleProduct)}>
       <input {...register('title')} type="text" placeholder="Título" />
       <input {...register('description')} type="text" placeholder="Descrição" />
       <input type="image" />
