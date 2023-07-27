@@ -1,20 +1,37 @@
+import { v4 as uuidv4 } from 'uuid';
+
 type Product = {
   id?: string;
   title: string;
   description: string;
-  price: number;
+  price: string;
 }
 
-let products: Product[] = [];
+let products: Product[] = [
+  {
+    id: '1',
+    title: 'Teste1',
+    description: 'Description teste',
+    price: '000',
+  }
+];
 
 export const getProduct = () => products
 
 export const getProductById = (id: string) => {
-  return products.find((product) => product.id === id)
+  const productsReturned = products.find((product) => product.id === id)
+
+  console.log(productsReturned)
+  return productsReturned
 }
 
 export const addProduct = (product: Product) => {
-  products.push(product);
+  const newProduct: Product = {
+    id: uuidv4(),
+    ...product,
+  };
+
+  products.push(newProduct);
 }
 
 export const deleteProduct = (id: string) => {

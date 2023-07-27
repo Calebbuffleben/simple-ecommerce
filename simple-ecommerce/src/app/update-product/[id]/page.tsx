@@ -1,5 +1,4 @@
 "use client"
-
 import FormComponent from "@/app/components/FormComponent/FormComponent"
 import api from "@/app/services/api"
 import { useEffect, useState } from "react"
@@ -10,18 +9,23 @@ interface IProductValues {
     description: string;
 }
 
-const UpdateProduct = ({ params }: { params: { slug: string }}) => {
+const UpdateProduct = ({ params }: { params: { id: string }}) => {
     const [defaultValues, setDefaultValues] = useState();
 
     useEffect(() => {
         getDefaultValue();
-        console.log(params)
+        console.log('Params', params.id)
     }, [])
 
-    const getDefaultValue = async (): Promise<void> => {
-        const response = await api.get(`api/form/${params}`)
+    //DEBUG
+    useEffect(() => {
+        console.log(defaultValues)
+    }, [defaultValues])
 
-        setDefaultValues(response.data);
+    const getDefaultValue = async (): Promise<void> => {
+        const response = await api.get(`api/form/${params.id}`)
+
+        setDefaultValues(response.data.products);
     }
 
     const { handleSubmit, register } = useForm<IProductValues>({
@@ -39,7 +43,7 @@ const UpdateProduct = ({ params }: { params: { slug: string }}) => {
 
     return (
         <>
-            <FormComponent handleProduct={handleUpdateProduct} handleSubmit={handleSubmit} register={register} />
+            <FormComponent defaultValues={defaultValues} handleProduct={handleUpdateProduct} handleSubmit={handleSubmit} register={register} />
         </>
     )
 }
