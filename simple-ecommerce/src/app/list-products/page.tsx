@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react"
 import styled from "styled-components";
 import api from "../services/api";
+import { useQuery } from 'react-query';
 
 const Table = styled.table`
   width: 100%;
@@ -50,19 +51,23 @@ const EditButton = styled(Button)`
   }
 `;
 
+const getProduct = async () => {
+  const response = await api.get('api/form');
+
+  console.log(response)
+
+  return response.data.products;
+}
+
 const ListProducts = () => {
-  const [products, setProducts] = useState<any>([]);
+  const { data: products, isLoading, error } = useQuery('products', getProduct);
 
-  useEffect(() => {
-    handleGetProduct();
-  }, [])
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  const handleGetProduct = async () => {
-    const response = await api.get('api/form');
-
-    console.log(response.data)
-
-    setProducts(response.data.products)
+  if (error) {
+    return <div>Error: {error.message}</div>;
   }
 
   return(
@@ -76,6 +81,7 @@ const ListProducts = () => {
           </tr>
       </thead>
       <tbody>
+        
           {products.map((product: any) => (
           <tr key='0'>
               <Td>{product.title}</Td>
