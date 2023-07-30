@@ -13,14 +13,12 @@ const schema = z.object({
 type ProductValues = z.infer<typeof schema>;
 
 export default function Register() {
-  const { handleSubmit, register } = useForm<ProductValues>({
+  const { handleSubmit, register, formState: { errors } } = useForm<ProductValues>({
     mode: 'onChange',
     resolver: zodResolver(schema)
   })
 
   const handleCreateProduct = async (data: ProductValues): Promise<void> => {
-    console.log(data)
-
     const { title, description } = data;
 
     await api.post('api/form',{ title, description })

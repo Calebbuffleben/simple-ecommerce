@@ -5,7 +5,6 @@ import api from "../services/api";
 import { useQuery } from 'react-query';
 import { 
   Button, 
-  EditButton, 
   Table, 
   Td, 
   Th 

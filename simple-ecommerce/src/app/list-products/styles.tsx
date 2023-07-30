@@ -37,11 +37,3 @@ export const Button = styled.button`
     background-color: #d32f2f;
   }
 `;
-
-export const EditButton = styled(Button)`
-  background-color: #2196f3;
-
-  &:hover {
-    background-color: #1976d2;
-  }
-`;

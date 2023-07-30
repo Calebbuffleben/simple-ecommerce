@@ -2,8 +2,6 @@ import { deleteProduct, getProductById, updateProduct } from "@/app/data";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-
-  console.log("REQ: ", req)
   const id =  req.url.split("api/form")[1]
   const products = getProductById(id.toString().replace('/', ''));
 
