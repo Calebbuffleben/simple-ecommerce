@@ -10,7 +10,7 @@ const schema = z.object({
   description: z.string().length(200)
 })
 
-type ProductValues = z.infer<typeof schema>;
+type ProductValues = {z.infer<typeof schema>;}
 
 export default function Register() {
   const { handleSubmit, register, formState: { errors } } = useForm<ProductValues>({
