@@ -1,5 +1,5 @@
 import { addProduct, getProduct } from "@/app/data";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const { title, description, price } = await req.json();

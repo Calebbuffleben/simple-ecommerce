@@ -1,5 +1,5 @@
 "use client"
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import FormComponent from '../components/FormComponent/FormComponent';
 import api from '../services/api'
 import { z } from 'zod';
@@ -10,7 +10,7 @@ const schema = z.object({
   description: z.string().length(200)
 })
 
-type ProductValues = {z.infer<typeof schema>;}
+type ProductValues = z.infer<typeof schema>;
 
 export default function Register() {
   const { handleSubmit, register, formState: { errors } } = useForm<ProductValues>({

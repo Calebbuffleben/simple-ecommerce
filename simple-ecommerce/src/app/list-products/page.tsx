@@ -24,7 +24,7 @@ const ListProducts = () => {
     return <div>Loading...</div>;
   }
 
-  if (error) {
+  if (error instanceof Error) {
     return <div>Error: {error.message}</div>;
   }
 
