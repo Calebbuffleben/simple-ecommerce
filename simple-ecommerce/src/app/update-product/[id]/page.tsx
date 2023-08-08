@@ -14,13 +14,7 @@ const UpdateProduct = ({ params }: { params: { id: string }}) => {
 
     useEffect(() => {
         getDefaultValue();
-        console.log('Params', params.id)
     }, [])
-
-    //DEBUG
-    useEffect(() => {
-        console.log(defaultValues)
-    }, [defaultValues])
 
     const getDefaultValue = async (): Promise<void> => {
         const response = await api.get(`api/form/${params.id}`)
