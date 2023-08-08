@@ -1,4 +1,5 @@
 'use client'
+
 import Link from "next/link";
 import React from "react"
 import api from "../services/api";
@@ -9,7 +10,6 @@ import {
   Td, 
   Th 
 } from "./styles"
-
 
 const getProduct = async () => {
   const response = await api.get('api/form');

@@ -1,12 +1,33 @@
 "use client"
+
+import { Button, FormContainer, Input, Label } from "./style";
+
 const FormComponent = ({ register, handleSubmit, handleProduct, defaultValues }: any) => (
-  <form onSubmit={handleSubmit(handleProduct)}>
-    <input {...register('title')} defaultValue={defaultValues?.title} type="text" placeholder="Título" />
-    <input {...register('description')} defaultValue={defaultValues?.description} type="text" placeholder="Descrição" />
-    <input type="image" />
-    <button type="submit" >Salvar Produto</button>
-  </form>
+  <FormContainer onSubmit={handleSubmit(handleProduct)}>
+      <Input
+        {...register('title')}
+        defaultValue={defaultValues?.title}
+        type="text"
+        placeholder="Título"
+      />
+      <Input
+        {...register('description')}
+        defaultValue={defaultValues?.description}
+        type="text"
+        placeholder="Descrição"
+      />
+      <Label >Produto digital ou físico?</Label>
+      <Label> 
+        Digital 
+        <Input type="radio" name="type-product" /> 
+      </Label>
+      <Label> 
+        Físico 
+        <Input type="radio" name="type-product" /> 
+      </Label>
+      <Label>Faça upload da imagem do produto</Label>
+      <Input {...register("file")} type="file" />
+      <Button type="submit">Salvar Produto</Button>
+    </FormContainer>
 );
-
-
 export default FormComponent;
