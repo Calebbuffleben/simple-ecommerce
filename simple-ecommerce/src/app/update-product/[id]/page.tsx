@@ -1,13 +1,12 @@
 "use client"
-import FormComponent from "@/app/components/FormComponent/FormComponent"
-import api from "@/app/services/api"
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
-interface IProductValues {
-    title: string;
-    description: string;
-}
+import FormComponent from "@/app/components/FormComponent/FormComponent"
+
+import IProductValues from "@/app/interfaces/IProduct"
+
+import api from "@/app/services/api"
 
 const UpdateProduct = ({ params }: { params: { id: string }}) => {
     const [defaultValues, setDefaultValues] = useState();

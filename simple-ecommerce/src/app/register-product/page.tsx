@@ -1,29 +1,30 @@
 "use client"
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
 import FormComponent from '../components/FormComponent/FormComponent';
-import { z } from 'zod';
-import { zodResolver } from "@hookform/resolvers/zod";
 
 import api from '../services/api'
 
-const schema = z.object({
-  title: z.string(),
-  description: z.string().length(200)
+import IProductValues from '../interfaces/IProduct';
+
+const schema = yup.object().shape({
+  title: yup.string().required(),
+  description: yup.string().required(),
 })
 
-type ProductValues = z.infer<typeof schema>;
 
 export default function Register() {
-  const { handleSubmit, register, formState: { errors } } = useForm<ProductValues>({
+  const { handleSubmit, register, formState: { errors } } = useForm<IProductValues>({
     mode: 'onChange',
-    resolver: zodResolver(schema),
+    resolver: yupResolver(schema),
   });
 
-  const handleCreateProduct = async (data: ProductValues): Promise<void> => {
-    console.log("Entrou aqui")
+  const handleCreateProduct = async (data: IProductValues): Promise<void> => {
     const { title, description } = data;
 
-    await api.post('api/form',{ title, description })
+    await api.post<IProductValues>('api/form',{ title, description })
   }
   return (
     <>
