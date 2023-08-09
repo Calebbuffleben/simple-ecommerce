@@ -41,7 +41,7 @@ export const Label = styled.label`
   margin: 5px 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align to the left */
+  justify-content: flex-start;
 
   input[type='radio'] {
     margin-right: 10px;

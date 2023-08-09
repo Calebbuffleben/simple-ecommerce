@@ -10,23 +10,28 @@ const FormComponent = ({ register, handleSubmit, handleProduct, defaultValues }:
         type="text"
         placeholder="Título"
       />
+      
       <Input
         {...register('description')}
         defaultValue={defaultValues?.description}
         type="text"
         placeholder="Descrição"
       />
+
       <Label >Produto digital ou físico?</Label>
       <Label> 
         Digital 
         <Input type="radio" name="type-product" /> 
       </Label>
+
       <Label> 
         Físico 
         <Input type="radio" name="type-product" /> 
       </Label>
       <Label>Faça upload da imagem do produto</Label>
+
       <Input {...register("file")} type="file" />
+
       <Button type="submit">Salvar Produto</Button>
     </FormContainer>
 );

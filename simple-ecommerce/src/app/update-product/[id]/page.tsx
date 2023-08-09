@@ -27,8 +27,6 @@ const UpdateProduct = ({ params }: { params: { id: string }}) => {
       })
     
     const handleUpdateProduct = async (data: IProductValues): Promise<void> => {
-        console.log(data)
-
         const { title, description } = data;
 
         await api.put('api/form',{ title, description })
