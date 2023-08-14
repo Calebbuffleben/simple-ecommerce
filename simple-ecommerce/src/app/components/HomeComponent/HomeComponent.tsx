@@ -1,6 +1,23 @@
-import React from "react"
-const HomeComponent = () => (
-    <HomeComponent>
+import React from "react";
+import shoes from "../../shoes.jpg"
+import Image from 'next/image'
+import IProductValues from "@/app/interfaces/IProduct";
+import { 
+    HeaderContainer, 
+    HeroSection, 
+    Logo, 
+    Navigation, 
+    ProductContainer, 
+    ProductCard, 
+    FooterContainer 
+} from "./styles"
+
+interface IHomeProps {
+    products: IProductValues[];
+}
+
+const HomeComponent = ({ products }: IHomeProps) => (
+    <>
         <HeaderContainer>
             <Logo>MyStore</Logo>
             <Navigation>
@@ -29,5 +46,7 @@ const HomeComponent = () => (
       <FooterContainer>
         <p>&copy; 2023 MyStore. All rights reserved.</p>
       </FooterContainer>
-    </HomeComponent>
+    </>
 )
+
+export default HomeComponent;
