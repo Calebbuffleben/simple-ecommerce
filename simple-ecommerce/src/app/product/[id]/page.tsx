@@ -11,7 +11,7 @@ const ProductPage = () => {
     name: 'Product Name',
     price: 39.99,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imageUrl: 'product.jpg',
+    image: 'product.jpg',
   };
 
   return (
