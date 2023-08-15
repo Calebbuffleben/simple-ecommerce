@@ -1,10 +1,8 @@
 'use client'
-import Image from 'next/image'
 import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import HomeComponent from './components/HomeComponent/HomeComponent';
 import api from './services/api';
-import shoes from "./shoes.jpg"
 
 
 const HeaderContainer = styled.header`
