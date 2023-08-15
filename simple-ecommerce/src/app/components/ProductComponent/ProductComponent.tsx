@@ -12,8 +12,9 @@ import {
     ProductPrice, 
     AddToCartButton 
 } from "./styles"
+import IProductValues from '@/app/interfaces/IProduct';
 
-const ProductComponent = ({ product }: any) => (
+const ProductComponent = ({ product }: IProductValues | any) => (
     <ProductPageContainer>
         <ProductImage>
             <Image src={shoes} alt={product.name} />
