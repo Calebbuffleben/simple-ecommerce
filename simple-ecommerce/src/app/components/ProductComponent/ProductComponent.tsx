@@ -9,12 +9,15 @@ import {
     ProductInfo, 
     ProductTitle, 
     ProductDescription, 
-    ProductPrice, 
+    ProductPrice,
+    RatingContainer,
+    StarIcon, 
     AddToCartButton 
 } from "./styles"
 import IProductValues from '@/app/interfaces/IProduct';
+import RatingComponent from '../RatingComponent/RatingComponent';
 
-const ProductComponent = ({ product }: IProductValues | any) => (
+const ProductComponent = ({ product, updateRating, rating }: IProductValues | any) => (
     <ProductPageContainer>
         <ProductImage>
             <Image src={shoes} alt={product.name} />
@@ -23,7 +26,13 @@ const ProductComponent = ({ product }: IProductValues | any) => (
             <ProductTitle>{product.name}</ProductTitle>
             <ProductDescription>{product.description}</ProductDescription>
             <ProductPrice>${product.price}</ProductPrice>
+            <RatingContainer>
+                <p>
+                    <StarIcon>&#9733;</StarIcon> {product.rating.toFixed(1)} ({product.reviews} reviews)
+                </p>
+            </RatingContainer>
             <AddToCartButton>Add to Cart</AddToCartButton>
+            <RatingComponent  updateRating={updateRating} rating={rating} />
         </ProductInfo>
     </ProductPageContainer>
 );

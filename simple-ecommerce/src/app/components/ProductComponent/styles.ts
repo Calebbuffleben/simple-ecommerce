@@ -50,6 +50,20 @@ export const ProductPrice = styled.p`
   margin-bottom: 2rem;
 `;
 
+export const RatingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  p {
+    margin-right: 1rem;
+  }
+`;
+
+export const StarIcon = styled.span`
+  color: #ffcc00;
+`;
+
 export const AddToCartButton = styled.button`
   padding: 1rem 2.5rem;
   font-size: 1.25rem;
