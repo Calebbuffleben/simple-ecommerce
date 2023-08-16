@@ -5,7 +5,6 @@ import { Button, FormContainer, Input, Label } from "./style";
 const FormComponent = ({ register, handleSubmit, handleProduct, defaultValues }: any) => (
 
   /* Add options like  
-    - Rating (in the product page)
     - Size
     - Color
     - Quantity
