@@ -7,7 +7,7 @@ import ProductComponent from '@/app/components/ProductComponent/ProductComponent
 const ProductPage = () => {
     const [rating, setRating] = useState(0);
 
-    const handleUpdateRating = (rating) => {
+    const handleUpdateRating = (rating: number) => {
         setRating(rating);
     }
 
