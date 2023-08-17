@@ -1,6 +1,12 @@
 "use client"
 import React from "react";
-import { ReviewForm, ReviewInput, RatingContainer, StarIcon, SubmitButton } from "./styles";
+import { 
+    ReviewForm, 
+    ReviewInput, 
+    RatingContainer, 
+    StarIcon, 
+    SubmitButton 
+} from "./styles";
 
 interface IRatingProps {
     rating: number;
