@@ -25,7 +25,7 @@ const RatingComponent = ({ updateRating, rating, submitReview }: IRatingProps) =
             <StarIcon className={rating === 5 ? 'selected' : ''} onClick={() => updateRating(5)}>&#9733;</StarIcon>
         </RatingContainer>
         <ReviewForm onSubmit={submitReview} >
-            <h3>Deixe seu review</h3>
+            <h3>Deixe sua avaliação</h3>
             <ReviewInput />
             <SubmitButton type="submit" >Deixe a sua avaliação</SubmitButton>
         </ReviewForm>
