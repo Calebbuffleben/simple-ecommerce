@@ -17,7 +17,7 @@ import {
 import IProductValues from '@/app/interfaces/IProduct';
 import RatingComponent from '../RatingComponent/RatingComponent';
 
-const ProductComponent = ({ product, updateRating, rating }: IProductValues | any) => (
+const ProductComponent = ({ product, updateRating, rating, submitReview }: IProductValues | any) => (
     <ProductPageContainer>
         <ProductImage>
             <Image src={shoes} alt={product.name} />
@@ -32,7 +32,7 @@ const ProductComponent = ({ product, updateRating, rating }: IProductValues | an
                 </p>
             </RatingContainer>
             <AddToCartButton>Add to Cart</AddToCartButton>
-            <RatingComponent  updateRating={updateRating} rating={rating} />
+            <RatingComponent  updateRating={updateRating} rating={rating} submitReview={submitReview} />
         </ProductInfo>
     </ProductPageContainer>
 );
