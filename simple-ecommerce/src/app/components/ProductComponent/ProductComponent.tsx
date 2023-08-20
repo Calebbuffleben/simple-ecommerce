@@ -2,6 +2,8 @@
 import React from 'react';
 import Image from 'next/image';
 import shoes from "../../shoes.jpg"
+import IProductValues from '@/app/interfaces/IProduct';
+import RatingComponent from '../RatingComponent/RatingComponent';
 
 import { 
     ProductPageContainer, 
@@ -14,8 +16,6 @@ import {
     StarIcon, 
     AddToCartButton 
 } from "./styles"
-import IProductValues from '@/app/interfaces/IProduct';
-import RatingComponent from '../RatingComponent/RatingComponent';
 
 const ProductComponent = ({ product, updateRating, rating, submitReview }: IProductValues | any) => (
     <ProductPageContainer>
