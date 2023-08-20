@@ -1,6 +1,5 @@
 "use client"
-import React from "react";
-import { FormEventHandler } from "react";
+import React, { FormEventHandler } from "react";
 import { 
     ReviewForm, 
     ReviewInput, 
