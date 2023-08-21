@@ -1,9 +1,6 @@
 'use client'
-import React, { ChangeEvent, EventHandler, FormEvent, FormEventHandler, useState } from 'react';
-import Image from 'next/image';
-import shoes from "../../shoes.jpg"
+import React, { ChangeEvent, useState } from 'react';
 import ProductComponent from '@/app/components/ProductComponent/ProductComponent';
-import { FormSubmitHandler, SubmitHandler } from 'react-hook-form';
 
 const ProductPage = () => {
     const [rating, setRating] = useState(0);
