@@ -12,7 +12,7 @@ const ProductPage = () => {
     const handleSubmitReview = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        console.log(e.target)
+        console.log(e.target.review.value)
     }
 
     // Replace this with actual product data

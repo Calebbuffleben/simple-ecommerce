@@ -25,7 +25,7 @@ const RatingComponent = ({ updateRating, rating, submitReview }: IRatingProps) =
         </RatingContainer>
         <ReviewForm onSubmit={submitReview} >
             <h3>Deixe sua avaliação</h3>
-            <ReviewInput />
+            <ReviewInput name="review" id="review" />
             <SubmitButton type="submit" >Deixe a sua avaliação</SubmitButton>
         </ReviewForm>
     </>
