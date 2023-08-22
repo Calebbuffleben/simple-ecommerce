@@ -1,8 +1,11 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
+
 import shoes from "../../shoes.jpg"
+
 import IProductValues from '@/app/interfaces/IProduct';
+
 import RatingComponent from '../RatingComponent/RatingComponent';
 
 import { 

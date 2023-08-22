@@ -10,13 +10,14 @@ export const RatingContainer = styled.div`
   }
 `;
 
-export const StarIcon = styled.span`
-  color: #ffcc00;
+export const StarIcon = styled.div`
+  color: silver;
+  border-color: #ffcc00;
   cursor: pointer;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #f0b300;
+    color: #ffcc00;
   }
 
   &.selected {
