@@ -3,6 +3,7 @@
 import React, { FormEventHandler } from "react";
 
 import { 
+    Container,
     ReviewForm, 
     ReviewInput, 
     RatingContainer, 
@@ -17,7 +18,7 @@ interface IRatingProps {
 }
 
 const RatingComponent = ({ updateRating, rating, submitReview }: IRatingProps) => (
-    <>
+    <Container>
         <RatingContainer>
             <StarIcon className={rating >= 1 ? 'selected' : ''} onClick={() => updateRating(1)} >&#9733;</StarIcon>
             <StarIcon className={rating >= 2 ? 'selected' : ''} onClick={() => updateRating(2)}>&#9733;</StarIcon>
@@ -30,7 +31,7 @@ const RatingComponent = ({ updateRating, rating, submitReview }: IRatingProps) =
             <ReviewInput name="review" id="review" />
             <SubmitButton type="submit" >Deixe a sua avaliação</SubmitButton>
         </ReviewForm>
-    </>
+    </Container>
 );
 
 export default RatingComponent;
