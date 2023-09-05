@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { FC }from 'react';
 import Image from 'next/image';
 
 import shoes from "../../shoes.jpg"
@@ -20,7 +20,14 @@ import {
     AddToCartButton 
 } from "./styles"
 
-const ProductComponent = ({ product, updateRating, rating, submitReview }: IProductValues | any) => (
+interface IProductComponentProps {
+    product: IProductValues;
+    updateRating: () => void;
+    rating: number;
+    submitReview: string;
+}
+
+const ProductComponent: FC = ({ product, updateRating, rating, submitReview }: IProductComponentProps) => (
     <ProductPageContainer>
         <ProductImage>
             <Image src={shoes} alt={product.name} />
