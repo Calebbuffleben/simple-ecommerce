@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Container } from "./styles";
 
-type Props = { children: React.ReactNode };
+interface IProductContainerProps { children: React.ReactNode };
 
-const ProductContainer: FC<Props> = ({ children } )  => (
+const ProductContainer: FC<IProductContainerProps> = ({ children } )  => (
     <Container>
         { children }
     </Container>
