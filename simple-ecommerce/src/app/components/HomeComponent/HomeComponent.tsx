@@ -2,12 +2,14 @@ import React from "react";
 import shoes from "../../shoes.jpg"
 import Image from 'next/image'
 import IProductValues from "@/app/interfaces/IProduct";
+
+import ProductContainer from "../ui/ProductContainer";
+
 import { 
     HeaderContainer, 
     HeroSection, 
     Logo, 
     Navigation, 
-    ProductContainer, 
     ProductCard, 
     FooterContainer 
 } from "./styles"
