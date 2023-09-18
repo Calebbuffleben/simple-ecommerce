@@ -27,7 +27,7 @@ interface IProductComponentProps {
     submitReview: string;
 }
 
-const ProductComponent: FC = ({ product, updateRating, rating, submitReview }: IProductComponentProps) => (
+const ProductComponent: FC = ({ product, updateRating, rating, submitReview }: IProductComponentProps | any) => (
     <ProductPageContainer>
         <ProductImage>
             <Image src={shoes} alt={product.name} />
