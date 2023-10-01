@@ -1,4 +1,5 @@
 'use client'
+
 import React, { ChangeEvent, useState } from 'react';
 import ProductComponent from '@/app/components/ProductComponent/ProductComponent';
 
