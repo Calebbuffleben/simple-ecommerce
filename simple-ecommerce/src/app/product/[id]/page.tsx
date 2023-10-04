@@ -21,7 +21,7 @@ const ProductPage = () => {
         id: 1,
         name: 'Product Name',
         price: 39.99,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Description test',
         image: 'product.jpg',
         rating: 4.5,
         reviews: 125,
