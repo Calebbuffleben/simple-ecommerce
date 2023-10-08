@@ -10,7 +10,7 @@ This is a simple ecommerce frontend built using React and Next.js. It provides a
 
 ## Getting Started
 
-1. **Clone the repository:**
+**Clone the repository:**
 
    ```bash
    git clone https://github.com/Calebbuffleben/simple-ecommerce.git
