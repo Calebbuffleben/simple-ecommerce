@@ -10,7 +10,7 @@ const UserLoginSlice = createSlice({
     initialState,
     reducers: {
         login: (state, action) => {
-            state.loggedInUser = acrion.payload
+            state.loggedInUser = action.payload
         },
         logout: (state) => {
             state.loggedInUser = null;
