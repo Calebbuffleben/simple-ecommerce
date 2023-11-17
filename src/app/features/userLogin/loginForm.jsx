@@ -1,15 +1,18 @@
-// features/userLogin/LoginForm.js
+"use client"
 
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from './UserLoginSlice';
 
 const LoginForm = ({ onLogin }) => {
+  const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
     // Perform validation or API call, then call onLogin callback
     const user = { username, password };
-    onLogin(user);
+    dispatch(login(user))
   };
 
   return (
