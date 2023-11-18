@@ -4,7 +4,7 @@ import {
   Button, 
   FormContainer, 
   Input, 
-  Label 
+  Label   
 } from "./style";
 
 const FormComponent = ({ register, handleSubmit, handleProduct, defaultValues }: any) => (

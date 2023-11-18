@@ -10,6 +10,7 @@ import {
   Td, 
   Th 
 } from "./styles"
+import ProductFiltersComponent from "../components/ProductFiltersComponent/ProductFiltersComponent";
 
 const getProduct = async () => {
   const response = await api.get('api/form');
@@ -30,6 +31,7 @@ const ListProducts = () => {
 
   return(
     <Table>
+      <ProductFiltersComponent  onFilterChange={''}/>
       <thead>
           <tr>
             <Th>Title</Th>
